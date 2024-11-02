@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <title>Inscripción - Paso 3 | Cursos Online Municipales</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --primary-color: #3949AB;
+            --secondary-color: #1E88E5;
+            --background-color: #F5F7FA;
+            --text-color: #333333;
+            --input-background: #FFFFFF;
+            --input-border: #E0E0E0;
+            --button-hover: #303F9F;
+        }
+
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .inscription-container {
+            background-color: var(--input-background);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 24px;
+            font-weight: 600;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .summary {
+            margin-bottom: 24px;
+        }
+
+        .summary h2 {
+            font-size: 18px;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+        }
+
+        .summary p {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--button-hover);
+        }
+
+        button.cancel {
+            background-color: #f44336;
+        }
+
+        button.cancel:hover {
+            background-color: #d32f2f;
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .step {
+            width: 30%;
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        .step::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background-color: var(--input-border);
+            border-radius: 50%;
+        }
+
+        .step.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .step.active::after {
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="inicio.html">Cursos</a>
+        <ul>
+            <li><a href="inicio.html" class="selecciona">Inicio</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="ayuda.html">Ayuda</a></li>
+        </ul>
+        <a class="user-icon" href="perfil.html">U</a>
+    </nav>
+    <main>
+        <div class="inscription-container">
+            <div class="step-indicator">
+                <div class="step">Paso 1</div>
+                <div class="step">Paso 2</div>
+                <div class="step active">Paso 3</div>
+            </div>
+            <h1>Resumen y Confirmación</h1>
+            <div class="summary">
+                <h2>Información del Usuario y Objetivos</h2>
+                <p><strong>Objetivo principal:</strong> <span id="objetivo"></span></p>
+                <p><strong>Frecuencia de estudio:</strong> <span id="frecuencia"></span></p>
+                <p><strong>Experiencia previa:</strong> <span id="experiencia"></span></p>
+    
+                <h2>Preferencias y Expectativas</h2>
+                <p><strong>Nivel de experiencia:</strong> <span id="nivel"></span></p>
+                <p><strong>Tipo de cursos de interés:</strong> <span id="interes"></span></p>
+                <p><strong>Motivo para tomar el curso:</strong> <span id="motivo"></span></p>
+            </div>
+            <div class="buttons">
+                <button class="cancel" onclick="window.location.href='inicio.html'">Cancelar</button>
+                <button onclick="alert('¡Inscripción confirmada!')">Confirmar</button>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // Función para obtener parámetros de la URL
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Llenar el resumen con los datos de los pasos anteriores
+        document.getElementById('objetivo').textContent = getUrlParameter('objetivo');
+        document.getElementById('frecuencia').textContent = getUrlParameter('frecuencia');
+        document.getElementById('experiencia').textContent = getUrlParameter('experiencia');
+        document.getElementById('nivel').textContent = getUrlParameter('nivel');
+        document.getElementById('interes').textContent = getUrlParameter('interes');
+        document.getElementById('motivo').textContent = getUrlParameter('motivo');
+    </script>
+</body>
+</html>

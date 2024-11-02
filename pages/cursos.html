@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/nav.css">
+
+    <title>Cursos - Cursos Municipales</title>
+    <style>
+        .courses-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .search-bar {
+            margin-bottom: 2rem;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .filters select {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .course-category {
+            margin-bottom: 2rem;
+        }
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .course-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .course-card img {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1rem;
+        }
+        .course-card h3 {
+            margin: 0.5rem 0;
+        }
+        .course-card p {
+            margin: 0.5rem 0;
+        }
+        .course-card button {
+            background-color: #3848AA;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .course-card button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .opinion-estrellas {
+            color: #ffd700;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="inicio.html">Cursos</a>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="cursos.html" class="selecciona">Cursos</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="ayuda.html">Ayuda</a></li>
+        </ul>
+        <a class="user-icon" href="perfil.html">U</a>
+    </nav>
+
+    <main>
+        <div class="courses-container">
+            <h1>Cursos Disponibles</h1>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar cursos...">
+            </div>
+
+            <div class="filters">
+                <select>
+                    <option value="">Categoría</option>
+                    <option value="programacion">Programación</option>
+                    <option value="diseno">Diseño</option>
+                    <option value="datos">Análisis de Datos</option>
+                </select>
+                <select>
+                    <option value="">Duración</option>
+                    <option value="corto">Corto (1-4 semanas)</option>
+                    <option value="medio">Medio (5-8 semanas)</option>
+                    <option value="largo">Largo (9+ semanas)</option>
+                </select>
+                <select>
+                    <option value="">Nivel</option>
+                    <option value="principiante">Principiante</option>
+                    <option value="intermedio">Intermedio</option>
+                    <option value="avanzado">Avanzado</option>
+                </select>
+            </div>
+
+            <div class="course-category">
+                <h2>Programación</h2>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <img src="https://via.placeholder.com/64" alt="Desarrollo web">
+                        <div class="opinion-estrellas">★★★☆☆</div>
+                        <h3>Desarrollo web</h3>
+                        <p>Duración: 6 semanas</p>
+                        <button>Inscribirse</button>
+                    </div>
+                    <div class="course-card">
+                        <img src="https://via.placeholder.com/64" alt="Python para principiantes">
+                        <div class="opinion-estrellas">★★★★☆</div>
+                        <h3>Python para principiantes</h3>
+                        <p>Duración: 4 semanas</p>
+                        <button>Inscribirse</button>
+                    </div>
+                    <div class="course-card">
+                        <img src="https://via.placeholder.com/64" alt="JavaScript avanzado">
+                        <div class="opinion-estrellas">★★★★★</div>
+                        <h3>JavaScript avanzado</h3>
+                        <p>Duración: 8 semanas</p>
+                        <button>Inscribirse</button>
+                    </div>
+                    <div class="course-card">
+                        <img src="https://via.placeholder.com/64" alt="Desarrollo de apps móviles">
+                        <div class="opinion-estrellas">★★★☆☆</div>
+                        <h3>Desarrollo de apps móviles</h3>
+                        <p>Duración: 10 semanas</p>
+                        <button>Inscribirse</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-category">
+                <h2>Diseño</h2>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <img src="https://via.placeholder.com/64" alt="Diseño UX/UI">
+                        <div class="opinion-estrellas">★☆☆☆☆</div>
+                        <h3>Diseño UX/UI</h3>
+                        <p>Duración: 8 semanas</p>
+                        <button>Inscribirse</button>
+                    </div>
+                    <div class="course-card">
+                        <img src="https://via.placeholder.com/64" alt="Diseño gráfico digital">
+                         <div class="opinion-estrellas">★★☆☆☆</div>
+                        <h3>Diseño gráfico digital</h3>
+                        <p>Duración: 6 semanas</p>
+                        <button>Inscribirse</button>
+                    </div>
+                    <div class="course-card">
+                        <img src="https://via.placeholder.com/64" alt="Ilustración digital">
+                         <div class="opinion-estrellas">★★★★★</div>
+                        <h3>Ilustración digital</h3>
+                        <p>Duración: 5 semanas</p>
+                        <button>Inscribirse</button>
+                    </div>
+                    <div class="course-card">
+                        <img src="https://via.placeholder.com/64" alt="Animación 2D">
+                         <div class="opinion-estrellas">★★★★☆</div>
+                        <h3>Animación 2D</h3>
+                        <p>Duración: 7 semanas</p>
+                        <button>Inscribirse</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-category">
+                <h2>Análisis de Datos</h2>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <img src="https://via.placeholder.com/64" alt="Introducción al análisis de datos">
+                         <div class="opinion-estrellas">★★☆☆☆</div>
+                        <h3>Introducción al análisis de datos</h3>
+                        <p>Duración: 4 semanas</p>
+                        <button>Inscribirse</button>
+                    </div>
+                    <div class="course-card">
+                        <img src="https://via.placeholder.com/64" alt="Visualización de datos">
+                         <div class="opinion-estrellas">★★★★☆</div>
+                        <h3>Visualización de datos</h3>
+                        <p>Duración: 5 semanas</p>
+                        <button>Inscribirse</button>
+                    </div>
+                    <div class="course-card">
+                        <img src="https://via.placeholder.com/64" alt="Machine Learning básico">
+                         <div class="opinion-estrellas">★☆☆☆☆</div>
+                        <h3>Machine Learning básico</h3>
+                        <p>Duración: 8 semanas</p>
+                        <button>Inscribirse</button>
+                    </div>
+                    <div class="course-card">
+                        <img src="https://via.placeholder.com/64" alt="Big Data y Hadoop">
+                         <div class="opinion-estrellas">★★★☆☆</div>
+                        <h3>Big Data y Hadoop</h3>
+                        <p>Duración: 9 semanas</p>
+                        <button>Inscribirse</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cursos Municipales. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

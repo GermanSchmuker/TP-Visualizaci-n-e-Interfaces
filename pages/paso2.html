@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <title>Inscripción - Paso 2 | Cursos Online Municipales</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --primary-color: #3949AB;
+            --secondary-color: #1E88E5;
+            --background-color: #F5F7FA;
+            --text-color: #333333;
+            --input-background: #FFFFFF;
+            --input-border: #E0E0E0;
+            --button-hover: #303F9F;
+        }
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .inscription-container {
+            background-color: var(--input-background);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 24px;
+            font-weight: 600;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: var(--text-color);
+        }
+
+        input, select {
+            margin-bottom: 16px;
+            padding: 10px 12px;
+            border: 1px solid var(--input-border);
+            border-radius: 4px;
+            font-size: 14px;
+            color: var(--text-color);
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--button-hover);
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .step {
+            width: 30%;
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        .step::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background-color: var(--input-border);
+            border-radius: 50%;
+        }
+
+        .step.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .step.active::after {
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="inicio.html">Cursos</a>
+        <ul>
+            <li><a href="inicio.html" class="selecciona">Inicio</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="ayuda.html">Ayuda</a></li>
+        </ul>
+        <a class="user-icon" href="perfil.html">U</a>
+    </nav>
+
+    <main>
+
+        <div class="inscription-container">
+            <div class="step-indicator">
+                <div class="step">Paso 1</div>
+                <div class="step active">Paso 2</div>
+                <div class="step">Paso 3</div>
+            </div>
+            <h1>Preferencias y Expectativas</h1>
+            <form action="inscripcion-paso3.html" method="get">
+                <label for="nivel">Nivel de experiencia en programación:</label>
+                <select id="nivel" name="nivel" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="principiante">Principiante</option>
+                    <option value="intermedio">Intermedio</option>
+                    <option value="avanzado">Avanzado</option>
+                </select>
+    
+                <label for="interes">Tipo de cursos de interés:</label>
+                <select id="interes" name="interes" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="web">Desarrollo web</option>
+                    <option value="datos">Ciencia de datos</option>
+                    <option value="ia">Inteligencia artificial</option>
+                    <option value="movil">Desarrollo móvil</option>
+                    <option value="otro">Otro</option>
+                </select>
+    
+                <label for="motivo">Motivo para tomar el curso:</label>
+                <select id="motivo" name="motivo" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="mejorar">Mejorar habilidades</option>
+                    <option value="cambio">Cambio de carrera</option>
+                    <option value="personal">Aprendizaje personal</option>
+                    <option value="otro">Otro</option>
+                </select>
+    
+                <label for="conocimiento">¿Cómo te enteraste del curso?</label>
+                <select id="conocimiento" name="conocimiento">
+                    <option value="">Selecciona una opción</option>
+                    <option value="redes">Redes sociales</option>
+                    <option value="amigos">Amigos o familiares</option>
+                    <option value="busqueda">Búsqueda en internet</option>
+                    <option value="publicidad">Publicidad</option>
+                    <option value="otro">Otro</option>
+                </select>
+    
+                <button type="submit">Siguiente</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

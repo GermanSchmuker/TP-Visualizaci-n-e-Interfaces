@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/nav.css">
+
+    <title>Ayuda - Cursos Municipales</title>
+    <style>
+        .help-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .search-bar {
+            margin-bottom: 2rem;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .faq-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .faq-question {
+            background-color: #f8f8f8;
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .faq-answer {
+            padding: 1rem;
+            display: none;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="inicio.html">Cursos</a>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="ayuda.html" class="selecciona">Ayuda</a></li>
+        </ul>
+        <a class="user-icon" href="perfil.html">U</a>
+    </nav>
+
+    <main>
+        <div class="help-container">
+            <h1>Ayuda</h1>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar preguntas frecuentes...">
+            </div>
+
+            <ul class="faq-list">
+                <li class="faq-item">
+                    <div class="faq-question">¿Cómo me inscribo en un curso?</div>
+                    <div class="faq-answer">Para inscribirte en un curso, selecciona el curso que te interesa y haz clic en el botón "Inscribirse". Sigue las instrucciones para completar tu inscripción.</div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question">¿Cuál es la duración promedio de los cursos?</div>
+                    <div class="faq-answer">La duración de los cursos varía, pero generalmente oscila entre 4 y 8 semanas, dependiendo del tema y la profundidad del contenido.</div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question">¿Los cursos son gratuitos?</div>
+                    <div class="faq-answer">Sí, todos nuestros cursos son gratuitos para los residentes de la municipalidad.</div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question">¿Puedo obtener un certificado al completar un curso?</div>
+                    <div class="faq-answer">Sí, al completar satisfactoriamente un curso, recibirás un certificado digital que podrás descargar desde tu perfil.</div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question">¿Qué requisitos técnicos necesito para tomar los cursos?</div>
+                    <div class="faq-answer">Necesitarás una computadora con conexión a internet. Los requisitos específicos varían según el curso, pero se detallan en la descripción de cada uno.</div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question">¿Cómo puedo restablecer mi contraseña?</div>
+                    <div class="faq-answer">En la página de inicio de sesión, haz clic en "¿Olvidaste tu contraseña?" y sigue las instrucciones para restablecerla.</div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question">¿Puedo tomar más de un curso a la vez?</div>
+                    <div class="faq-answer">Sí, puedes inscribirte en múltiples cursos simultáneamente, pero te recomendamos considerar tu disponibilidad de tiempo.</div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question">¿Cómo puedo contactar al soporte técnico?</div>
+                    <div class="faq-answer">Puedes contactar a nuestro soporte técnico enviando un correo a soporte@cursosmunicipales.com o llamando al 0800-123-4567.</div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question">¿Los cursos tienen fechas de inicio fijas?</div>
+                    <div class="faq-answer">Algunos cursos tienen fechas de inicio específicas, mientras que otros permiten comenzar en cualquier momento. Revisa la información de cada curso para más detalles.</div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question">¿Puedo acceder al contenido del curso después de completarlo?</div>
+                    <div class="faq-answer">Sí, una vez completado el curso, tendrás acceso al contenido durante un período adicional de 6 meses.</div>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cursos Municipales. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>

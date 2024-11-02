@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <title>Ayuda - Cursos Municipales</title>
+    <style>
+
+        main{
+            padding-top: 2em;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+
+
+        .view-all-btn {
+            display: block;
+            width: 200px;
+            margin: 2rem auto;
+            padding: 0.5rem;
+            background-color: #3848AA;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+
+
+
+        .comunidad {
+    margin-top: 0;
+}
+
+.comunidad h2 {
+    color: #333;
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: solid 2px #cccccc;
+}
+
+.foros-container {
+    display: flex;
+    flex-direction: column;
+    overflow-x: none;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    gap: 2em;
+}
+
+.foro {
+    flex: 0 0 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 0px 10px rgba(0,0,0,0.2);
+}
+
+.foro h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.mensajes {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.mensaje {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    border: solid 2px;
+}
+
+.contenido-mensaje {
+    flex: 1;
+}
+
+.usuario {
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.nuevo-mensaje {
+    display: flex;
+}
+
+.nuevo-mensaje input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+.nuevo-mensaje button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.nuevo-mensaje button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .foros-container {
+        flex-direction: column;
+    }
+
+    .foro {
+        flex: none;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="inicio.html">Cursos</a>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="ayuda.html" class="selecciona">Ayuda</a></li>
+        </ul>
+        <a class="user-icon" href="perfil.html">U</a>
+    </nav>
+
+        <main>        
+            <section class="comunidad">
+                <h2>Foros de la comunidad</h2>
+                <div class="foros-container">
+                    <div class="foro">
+                        <h3>Curso: Introducción a Python</h3>
+                        <div class="mensajes">
+                            <div class="mensaje">
+                                <p class="avatar"></p>
+                                <div class="contenido-mensaje">
+                                    <p class="usuario">Ana L.</p>
+                                    <p>¿Alguien puede explicarme cómo funcionan las listas por comprensión en Python?</p>
+                                </div>
+                            </div>
+                            <div class="mensaje">
+                                <p class="avatar"></p>
+                                <div class="contenido-mensaje">
+                                    <p class="usuario">Juan P.</p>
+                                    <p>Claro, las listas por comprensión son una forma concisa de crear listas. Por ejemplo: [x**2 for x in range(10)] crea una lista con los cuadrados de los números del 0 al 9.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="nuevo-mensaje">
+                            <input type="text" placeholder="Escribe tu mensaje...">
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
+                    <div class="foro">
+                        <h3>Curso: JavaScript Avanzado</h3>
+                        <div class="mensajes">
+                            <div class="mensaje">
+                                <p class="avatar"></p>
+                                <div class="contenido-mensaje">
+                                    <p class="usuario">María G.</p>
+                                    <p>¿Alguien ha trabajado con Promises en JavaScript? Necesito ayuda para entender cómo manejar errores.</p>
+                                </div>
+                            </div>
+                            <div class="mensaje">
+                                <p class="avatar"></p>
+                                <div class="contenido-mensaje">
+                                    <p class="usuario">Carlos R.</p>
+                                    <p>Sí, para manejar errores en Promises puedes usar .catch() o try/catch con async/await. ¿Qué enfoque prefieres?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="nuevo-mensaje">
+                            <input type="text" placeholder="Escribe tu mensaje...">
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
+                    <div class="foro">
+                        <h3>Curso: Desarrollo Web</h3>
+                        <div class="mensajes">
+                            <div class="mensaje">
+                                <p class="avatar"></p>
+                                <div class="contenido-mensaje">
+                                    <p class="usuario">Laura M.</p>
+                                    <p>¿Cuál es la mejor manera de aprender CSS Grid? ¿Algún recurso recomendado?</p>
+                                </div>
+                            </div>
+                            <div class="mensaje">
+                                <p class="avatar"></p>
+                                <div class="contenido-mensaje">
+                                    <p class="usuario">David S.</p>
+                                    <p>Te recomiendo el curso de CSS Grid en FreeCodeCamp, es gratuito y muy completo. También puedes practicar con CSS Grid Garden, un juego interactivo.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="nuevo-mensaje">
+                            <input type="text" placeholder="Escribe tu mensaje...">
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <a href="cursos.html" class="view-all-btn">Ver más foros</a>
+
+        </main>
+
+    <footer>
+        <p>&copy; 2024 Cursos Municipales. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
