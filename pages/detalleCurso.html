@@ -6,28 +6,11 @@
     <link rel="stylesheet" href="../styles/nav.css">
     <title>Detalle del Curso - Cursos Municipales</title>
     <style>
-        .breadcrumb {
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        .breadcrumb a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }   
-
-        .breadcrumb span {
-            color: #333;
-            font-weight: bold;
-        }
 
         .course-details {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 2em auto;
+            color: #fff;
         }
         .course-header {
             display: flex;
@@ -36,8 +19,8 @@
             margin-bottom: 2rem;
         }
         .course-header img {
-            width: 64px;
-            height: 64px;
+            width: 7em;
+            margin-right: 2em;
         }
         .course-content {
             margin-bottom: 2rem;
@@ -52,83 +35,90 @@
             color: white;
             border-radius: 4px;
         }
-        .back-btn {
-            background-color: #6c757d;
-        }
-        .enroll-btn {
-            background-color: #3848AA;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-        }
+    
 
-
-         .view-all-btn {
+        .view-all-btn {
             display: block;
             width: 200px;
-            margin: 2rem auto;
-            padding: 0.5rem;
-            background-color: #3848AA;
-            color: white;
+            margin: 1.5rem auto;
+            padding: .7rem;
+            background-color: #EEF207;
+            color: #000 !important;
             text-align: center;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: .5em;
             border: none;
             cursor: pointer;
+            font-size: 1.1em;
+            border: solid 2px #424239;
+            transition: all .2s;
+        }
+
+        .view-all-btn:hover{
+            color: #fff;
+            border: solid 2px #EEF207;
         }
 
         .opiniones {
-        margin-top: 2rem;
-        margin-top: 7em;
+            margin-top: 2rem;
+            margin-top: 7em;
         }
 
         .opiniones h2 {
-            color: #333;
-            margin-bottom: 1rem;
+            color: #fff;
             text-align: center;
         }
 
         .opiniones-grid {
+            margin: 5em ;
             display: grid;
-            grid-template-columns: repeat(2, 400px);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
-            place-content: center;
         }
 
         .opinion-card {
-            background-color: #fff;
+            background-color: transparent;
+            border: solid 1px #EEF207;
             border-radius: 8px;
             padding: 1.5rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            color: #fff;
+            transition: all .2s;
         }
 
-        .opinion-avatar {
+        .opinion-card:hover{
+            box-shadow: 0 0 10px #EEF207;
+        }
+
+        .opinion-avatar { 
             width: 80px;
             height: 80px;
             border-radius: 50%;
             margin-bottom: 1rem;
-            border: solid 2px #000;
+            overflow: hidden;
+
+            & img{
+                width: 100%;
+                object-fit: cover;
+            }
         }
 
         .opinion-card h3 {
             margin: 0;
-            color: #333;
         }
 
         .opinion-rol {
-            color: #666;
             font-size: 0.9rem;
             margin: 0.5rem 0;
         }
 
         .opinion-texto {
+            border-top: solid 1px #858585;
+            padding-top: 1.2em;
             font-style: italic;
             margin: 1rem 0;
         }
@@ -155,22 +145,24 @@
         <a href="../index.html">Cursos</a>
         <ul>
             <li><a href="../index.html">Inicio</a></li>
-            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="cursos.html" class="seleccionada">Cursos</a></li>
             <li><a href="comunidad.html">Comunidad</a></li>
             <li><a href="ayuda.html">Ayuda</a></li>
         </ul>
-        <a class="user-icon" href="perfil.html">U</a>
+        <a class="user-icon" href="perfil.html"> 
+            <img src="../assets/img/31.jpeg" alt="Imagen perfil" title="Perfil">
+        </a>
     </nav>
 
     <main>
         <div class="breadcrumb">
             <a href="../index.html">Inicio</a> &gt;
             <a href="cursos.html">Cursos</a> &gt;
-            <span>Detalles del Curso</span>
+            <a href="cursos.html">Desarrollo Web</a>
         </div>
         <div class="course-details">
             <div class="course-header">
-                <img src="https://via.placeholder.com/64" alt="Desarrollo web">
+                <img src="../assets/iconSinBckgrd/desarolloWeb-removebg-preview.png" alt="Desarrollo web">
                 <div>
                     <h1>Desarrollo web</h1>
                     <p>Duración: 4 semanas</p>
@@ -192,47 +184,57 @@
             </div>
 
             <div class="course-actions">
-                <a href="inicio.html" class="back-btn">Volver al inicio</a>
-                <a href="pasi1.html" class="enroll-btn">Inscribirse</a>
+                <a href="inicio.html" class="view-all-btn">Volver al inicio</a>
+                <a href="pasi1.html" class="view-all-btn">Inscribirse</a>
             </div>
         </div>
 
 
 
         <section class="opiniones">
-            <h2>Opiniones sobre este curso</h2>
+            <h2>Opiniones de los Estudiantes</h2>
             <div class="opiniones-grid">
                 <div class="opinion-card">
-                    <p class="opinion-avatar"></p>
+                    <p class="opinion-avatar">
+                        <img src="../assets/img/31.jpeg" alt="Imagen perfil" title="Perfil">
+                    </p>
                     <h3>María G.</h3>
                     <p class="opinion-rol">Estudiante de Informática</p>
-                    <p class="opinion-texto">"Este curso es excelente para principiantes. El instructor explica los conceptos de manera clara y los ejercicios prácticos son muy útiles."</p>
+                    <p class="opinion-texto">"Este curso es excelente para principiantes. El instructor explica los
+                        conceptos de manera clara y los ejercicios prácticos son muy útiles."</p>
                     <div class="opinion-estrellas">★★★★★</div>
                 </div>
                 <div class="opinion-card">
-                    <p class="opinion-avatar"></p>
-                    <h3>Juan P.</h3>
+                    <p class="opinion-avatar">
+                        <img src="../assets/img/mujer.jpg" alt="Imagen perfil" title="Perfil">
+                    </p>                    <h3>Juan P.</h3>
                     <p class="opinion-rol">Desarrollador Web</p>
-                    <p class="opinion-texto">"Como desarrollador web, encontré este curso muy útil para ampliar mis habilidades. Los proyectos finales son desafiantes y divertidos."</p>
+                    <p class="opinion-texto">"Como desarrollador web, encontré este curso muy útil para ampliar mis
+                        habilidades. Los proyectos finales son desafiantes y divertidos."</p>
                     <div class="opinion-estrellas">★★★★☆</div>
                 </div>
                 <div class="opinion-card">
-                    <p class="opinion-avatar"></p>
+                    <p class="opinion-avatar">
+                        <img src="../assets/img/9.jpg" alt="Imagen perfil" title="Perfil">
+                    </p>
                     <h3>Ana L.</h3>
                     <p class="opinion-rol">Estudiante de Secundaria</p>
-                    <p class="opinion-texto">"Nunca había programado antes, pero este curso me hizo sentir capaz. Los ejemplos son muy prácticos y fáciles de seguir."</p>
+                    <p class="opinion-texto">"Nunca había programado antes, pero este curso me hizo sentir capaz.
+                        Los ejemplos son muy prácticos y fáciles de seguir."</p>
                     <div class="opinion-estrellas">★★★★★</div>
                 </div>
                 <div class="opinion-card">
-                    <p class="opinion-avatar"></p>
+                    <p class="opinion-avatar">
+                        <img src="../assets/img/10.jpeg" alt="Imagen perfil" title="Perfil">
+                    </p>
                     <h3>Ana L.</h3>
                     <p class="opinion-rol">Estudiante de Secundaria</p>
-                    <p class="opinion-texto">"Nunca había programado antes, pero este curso me hizo sentir capaz. Los ejemplos son muy prácticos y fáciles de seguir."</p>
+                    <p class="opinion-texto">"Nunca había programado antes, pero este curso me hizo sentir capaz.
+                        Los ejemplos son muy prácticos y fáciles de seguir."</p>
                     <div class="opinion-estrellas">★★★★★</div>
                 </div>
             </div>
-        </section>
-        <a href="cursos.html" class="view-all-btn">Ver más</a>
+        <a href="comunidad.html" class="view-all-btn">Ver más</a>
     </main>
 
     <footer>

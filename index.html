@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="styles/nav.css">
     <title>Inicio - Cursos Municipales</title>
     <style>
+
+        /*color amarillo : #EEF207*/
+        /*color gris : #424239*/
         body {
-            font-family: Arial, sans-serif;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+        }
+
+        main{
+            padding: 0;
         }
 
         .description {
@@ -22,9 +29,29 @@
         }
 
         .slide-container{
-        position: relative;
+    
+            position: relative;
 			width: 100%;
 			height: 400px;
+
+            & .contenedor_titulos_slides{
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color: #fff;
+                position: absolute;
+                z-index: 50;
+                bottom: 40px;
+                left: 30%;
+                
+
+                & h4{
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                }
+
+                h4, h2{
+                    text-align: center;
+                    font-size: 2em;
+                }
+            }
 		}
 		.slide-container .slides{
 			width: 100%;
@@ -37,6 +64,7 @@
 			height: 100%;
 			position: absolute;
 			object-fit: cover;
+            filter:brightness(.4);
 		}
 		.slide-container .slides img:not(.active){
 			top: 0;
@@ -78,14 +106,14 @@
 			width: 10px;
 			height: 10px;
 			margin: 0px 2px;
-			border: 3px solid #bbb;
+			border: 2px solid #EEF207;
 			border-radius: 50%;
 			display: inline-block;
 			cursor: pointer;
 			transition: background-color 0.6s ease;
 		}
 		.dotsContainer .active{
-			background-color: #3848AA;
+			background-color: #000000;
 		}
 
 		@keyframes next1{
@@ -130,23 +158,48 @@
         }
 
         .search-bar input {
-            padding: 0.5rem;
-            width: 300px;
-            border: 1px solid #ddd;
+            padding: .7rem .5rem;
+            width: 400px;
             border-radius: 4px;
+            font-size: 1.1em;
+            background-color: #565654;
+            color: red;
+            caret-color: #EEF207;    
+            border: none;
+            border-bottom: solid 2px #EEF207;
+        }
+
+        .search-bar input:focus{
+            border: none;
+            outline: #EEF207 2px solid;
+        }
+
+        input::placeholder {
+            color: #ffffff; 
         }
 
         .courses-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            margin: 5em 6em;
         }
 
         .course-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            box-shadow: 2px 2px 15px #000;
+            border-radius: none;
+            border-top-right-radius: 3em;
+            border-bottom-left-radius: 3em;
+
             padding: 1rem;
             text-align: center;
+            color: #fff;
+            transition: all .2s;
+            text-decoration: none;
+        }
+
+        .course-card:hover{
+            transform: translateY(-10px);
         }
 
         .course-card h3 {
@@ -161,20 +214,30 @@
             width: 128px;
             height: 128px;
             margin-bottom: 1rem;
+            object-fit: contain;
         }
 
         .view-all-btn {
             display: block;
             width: 200px;
             margin: 1.5rem auto;
-            padding: 0.5rem;
-            background-color: #3848AA;
-            color: white;
+            padding: .7rem;
+            background-color: #EEF207;
+            color: #000;
             text-align: center;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: .5em;
             border: none;
             cursor: pointer;
+            font-size: 1.1em;
+            border: solid 2px #424239;
+            transition: all .2s;
+        }
+
+        .view-all-btn:hover{
+            color: #fff;
+            border: solid 2px #EEF207;
+            background-color: transparent;
         }
 
         .opiniones {
@@ -183,19 +246,20 @@
         }
 
         .opiniones h2 {
-            color: #333;
-            margin-bottom: 1rem;
+            color: #fff;
             text-align: center;
         }
 
         .opiniones-grid {
+            margin: 5em ;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
         }
 
         .opinion-card {
-            background-color: #fff;
+            background-color: transparent;
+            border: solid 1px #EEF207;
             border-radius: 8px;
             padding: 1.5rem;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -203,28 +267,40 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            color: #fff;
+            transition: all .2s;
         }
 
-        .opinion-avatar {
+        .opinion-card:hover{
+            box-shadow: 0 0 10px #EEF207;
+        }
+
+        .opinion-avatar { 
             width: 80px;
             height: 80px;
             border-radius: 50%;
             margin-bottom: 1rem;
             border: solid 2px #000;
+            overflow: hidden;
+
+            & img{
+                width: 100%;
+                object-fit: cover;
+            }
         }
 
         .opinion-card h3 {
             margin: 0;
-            color: #333;
         }
 
         .opinion-rol {
-            color: #666;
             font-size: 0.9rem;
             margin: 0.5rem 0;
         }
 
         .opinion-texto {
+            border-top: solid 1px #858585;
+            padding-top: 1.2em;
             font-style: italic;
             margin: 1rem 0;
         }
@@ -247,12 +323,14 @@
     <nav>
         <a href="../index.html">Cursos</a>
         <ul>
-            <li><a href="../index.html" class="selecciona">Inicio</a></li>
+            <li><a href="../index.html" class="seleccionada">Inicio</a></li>
             <li><a href="pages/cursos.html">Cursos</a></li>
             <li><a href="pages/comunidad.html">Comunidad</a></li>
             <li><a href="pages/ayuda.html">Ayuda</a></li>
         </ul>
-        <a class="user-icon" href="pages/perfil.html">U</a>
+        <a class="user-icon" href="pages/perfil.html"> 
+            <img src="assets/img/31.jpeg" alt="Imagen perfil" title="Perfil">
+        </a>
     </nav>
 
     <main>
@@ -263,9 +341,16 @@
             <div class="slide-container">
 	
                 <div class="slides">
-                    <img src="https://tophat.com/wp-content/uploads/2017/05/BLOG_code.jpg" class="active">
+                    <!--<img src="https://tophat.com/wp-content/uploads/2017/05/BLOG_code.jpg" class="active">
                     <img src="https://via.placeholder.com/1200x340">
-                    <img src="https://blog.pearsonlatam.com/hs-fs/hubfs/ventajas-examenes-online-a-distancia-escuelas-1.jpg?width=800&name=ventajas-examenes-online-a-distancia-escuelas-1.jpg ">
+                    <img src="https://blog.pearsonlatam.com/hs-fs/hubfs/ventajas-examenes-online-a-distancia-escuelas-1.jpg?width=800&name=ventajas-examenes-online-a-distancia-escuelas-1.jpg ">-->
+                    <img src="assets/img/fondo1.jpeg" class="active">
+                    <img src="assets/img/fondo2.jpeg">
+                    <img src="assets/img/fondo3.jpg">
+                    <div class="contenedor_titulos_slides">
+                        <h2>¡Los mejores cursos en programación aquí!</h2>
+                        <h4>Contenido de la mejor calidad.</h4>
+                    </div>
                 </div>
             
                 <div class="buttons">
@@ -289,34 +374,34 @@
         </div>
 
         <div class="courses-grid">
-            <div class="course-card">
-                <img src="https://via.placeholder.com/64" alt="Desarrollo web">
+            <a class="course-card" href="pages/detalleCurso.html">
+                <img src="assets/iconSinBckgrd/desarolloWeb-removebg-preview.png" alt="Desarrollo web">
                 <div class="opinion-estrellas">★★★★★</div>
                 <h3>Desarrollo web</h3>
                 <p>Duración: 4 semanas</p>
                 <button onclick="window.location.href='pages/detalleCurso.html';" class="view-all-btn">Inscribirse</button>
-            </div>
-            <div class="course-card">
-                <img src="https://via.placeholder.com/64" alt="Programación en Python">
+            </a>
+            <a class="course-card" href="pages/detalleCurso.html">
+                <img src="assets/iconSinBckgrd/python-removebg-preview.png" alt="Programación en Python">
                 <div class="opinion-estrellas">★★★★☆</div>
-                <h3>Programación en Python</h3>
+                <h3>Python</h3>
                 <p>Duración: 6 semanas</p>
                 <button class="view-all-btn">Inscribirse</button>
-            </div>
-            <div class="course-card">
-                <img src="https://via.placeholder.com/64" alt="Diseño UX/UI">
+            </a>
+            <a class="course-card" href="pages/detalleCurso.html">
+                <img src="assets/iconSinBckgrd/ilustrator-removebg-preview.png" alt="Diseño UX/UI">
                 <div class="opinion-estrellas">★★★★★</div>
                 <h3>Diseño UX/UI</h3>
                 <p>Duración: 5 semanas</p>
                 <button class="view-all-btn">Inscribirse</button>
-            </div>
-            <div class="course-card">
-                <img src="https://via.placeholder.com/64" alt="Inteligencia Artificial">
+            </a>
+            <a class="course-card" href="pages/detalleCurso.html">
+                <img src="assets/iconSinBckgrd/ia-removebg-preview.png" alt="Inteligencia Artificial">
                 <div class="opinion-estrellas">★★☆☆☆</div>
                 <h3>Inteligencia Artificial</h3>
                 <p>Duración: 8 semanas</p>
                 <button class="view-all-btn">Inscribirse</button>
-            </div>
+            </a>
         </div>
 
         <a href="pages/cursos.html" class="view-all-btn">Ver todos los cursos</a>
@@ -326,7 +411,9 @@
             <h2>Opiniones de los Estudiantes</h2>
             <div class="opiniones-grid">
                 <div class="opinion-card">
-                    <p class="opinion-avatar"></p>
+                    <p class="opinion-avatar">
+                        <img src="assets/img/31.jpeg" alt="Imagen perfil" title="Perfil">
+                    </p>
                     <h3>María G.</h3>
                     <p class="opinion-rol">Estudiante de Informática</p>
                     <p class="opinion-texto">"Este curso es excelente para principiantes. El instructor explica los
@@ -334,15 +421,18 @@
                     <div class="opinion-estrellas">★★★★★</div>
                 </div>
                 <div class="opinion-card">
-                    <p class="opinion-avatar"></p>
-                    <h3>Juan P.</h3>
+                    <p class="opinion-avatar">
+                        <img src="assets/img/mujer.jpg" alt="Imagen perfil" title="Perfil">
+                    </p>                    <h3>Juan P.</h3>
                     <p class="opinion-rol">Desarrollador Web</p>
                     <p class="opinion-texto">"Como desarrollador web, encontré este curso muy útil para ampliar mis
                         habilidades. Los proyectos finales son desafiantes y divertidos."</p>
                     <div class="opinion-estrellas">★★★★☆</div>
                 </div>
                 <div class="opinion-card">
-                    <p class="opinion-avatar"></p>
+                    <p class="opinion-avatar">
+                        <img src="assets/img/10.jpeg" alt="Imagen perfil" title="Perfil">
+                    </p>
                     <h3>Ana L.</h3>
                     <p class="opinion-rol">Estudiante de Secundaria</p>
                     <p class="opinion-texto">"Nunca había programado antes, pero este curso me hizo sentir capaz.
@@ -350,7 +440,9 @@
                     <div class="opinion-estrellas">★★★★★</div>
                 </div>
                 <div class="opinion-card">
-                    <p class="opinion-avatar"></p>
+                    <p class="opinion-avatar">
+                        <img src="assets/img/9.jpg" alt="Imagen perfil" title="Perfil">
+                    </p>
                     <h3>Ana L.</h3>
                     <p class="opinion-rol">Estudiante de Secundaria</p>
                     <p class="opinion-texto">"Nunca había programado antes, pero este curso me hizo sentir capaz.
@@ -359,7 +451,7 @@
                 </div>
             </div>
         </section>
-        <a href="pages/cursos.html" class="view-all-btn">Ver más</a>
+        <a href="pages/comunidad.html" class="view-all-btn">Ver más</a>
 
     </main>
 

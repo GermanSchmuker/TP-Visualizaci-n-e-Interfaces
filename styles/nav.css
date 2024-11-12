@@ -1,3 +1,18 @@
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #2C2C26; 
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent; 
+  }
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,15 +20,21 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #424239;
 }
 
 nav {
     background-color: #3848AA;
+    background-color: #2c2c26;
     color: white;
     padding: .5rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 0px 10px #000;
+    position: sticky;
+    top: 0;
+    z-index: 150;
 }
 nav ul {
     list-style-type: none;
@@ -23,6 +44,16 @@ nav ul {
 nav a {
     color: white;
     text-decoration: none;
+    transition: all .2s;
+    border-bottom: 3px solid #2c2c26;
+}
+
+nav a:hover{
+    border-bottom: 3px solid #EEF207;
+}
+
+.seleccionada{
+    border-bottom: 3px solid #EEF207;
 }
 
 .user-icon {
@@ -34,7 +65,20 @@ nav a {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    overflow: hidden;
+    border: none !important;
+    transition: all .2s;
+
+    & img{
+        width: 100%;
+        object-fit: cover;
+    }
 }
+
+.user-icon:hover{
+    transform: scale(1.1);
+}
+
 main {
     flex-grow: 1;
     padding-top: 2rem;
@@ -42,8 +86,68 @@ main {
 }
 
 footer {
-    background-color: #333;
+    background-color: #424239;
     color: white;
     text-align: center;
     padding: 1rem;
+}
+
+
+
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.search-bar input {
+    padding: .7rem .5rem;
+    width: 400px;
+    border-radius: 4px;
+    font-size: 1.1em;
+    background-color: #565654;
+    color: red;
+    caret-color: #EEF207;    
+    border: none;
+    border-bottom: solid 2px #EEF207;
+}
+
+.search-bar input:focus{
+    border: none;
+    outline: #EEF207 2px solid;
+}
+
+input::placeholder {
+    color: #ffffff; 
+}
+
+
+
+/*
+<div class="breadcrumb">
+            <a href="../index.html">Inicio</a> &gt;
+            <a href="cursos.html">Cursos</a>
+        </div>
+
+*/
+.breadcrumb {
+    font-size: 0.9em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    gap: .5em;
+}
+
+.breadcrumb a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}   
+
+.breadcrumb span {
+    font-weight: bold;
 }
