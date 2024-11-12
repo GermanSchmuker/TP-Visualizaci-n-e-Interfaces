@@ -145,7 +145,7 @@ input::placeholder {
 }
 
 .breadcrumb a:hover {
-    text-decoration: underline;
+    text-decoration: underline #EEF207;
 }   
 
 .breadcrumb span {

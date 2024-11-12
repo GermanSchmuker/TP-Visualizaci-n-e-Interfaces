@@ -9,23 +9,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
         .breadcrumb {
-            font-size: 0.9em;
-            color: #666;
-            margin: 20px 0 0 20px;
-        }
-
-        .breadcrumb a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }   
-
-        .breadcrumb span {
-            color: #333;
-            font-weight: bold;
+            margin: 30px 0 0 30px;
         }
 
         :root {
@@ -181,13 +165,15 @@
                 <p><strong>Motivo para tomar el curso:</strong> <span id="motivo"></span></p>
             </div>
             <div class="buttons">
-                <button class="cancel" onclick="window.location.href='inicio.html'">Cancelar</button>
-                <button onclick="alert('¡Inscripción confirmada!')">Confirmar</button>
+                <button class="cancel" onclick="window.location.href='index.html'">Cancelar</button>
+                <form action="cursoInscripto.html" method="get">
+                    <button  type="submit">Confirmar</button>
+                </form>
             </div>
         </div>
 
     </main>
-
+    
     <script>
         // Función para obtener parámetros de la URL
         function getUrlParameter(name) {
