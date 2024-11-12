@@ -6,6 +6,25 @@
     <link rel="stylesheet" href="../styles/nav.css">
     <title>Detalle del Curso - Cursos Municipales</title>
     <style>
+        .breadcrumb {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }   
+
+        .breadcrumb span {
+            color: #333;
+            font-weight: bold;
+        }
+
         .course-details {
             max-width: 800px;
             margin: 0 auto;
@@ -47,16 +66,7 @@
         }
 
 
-
-
-
-
-
-
-
-
-
-        .view-all-btn {
+         .view-all-btn {
             display: block;
             width: 200px;
             margin: 2rem auto;
@@ -153,6 +163,11 @@
     </nav>
 
     <main>
+        <div class="breadcrumb">
+            <a href="../index.html">Inicio</a> &gt;
+            <a href="cursos.html">Cursos</a> &gt;
+            <span>Detalles del Curso</span>
+        </div>
         <div class="course-details">
             <div class="course-header">
                 <img src="https://via.placeholder.com/64" alt="Desarrollo web">

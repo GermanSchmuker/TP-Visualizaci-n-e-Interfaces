@@ -7,6 +7,26 @@
 
     <title>Cursos - Cursos Municipales</title>
     <style>
+        .breadcrumb {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }   
+
+        .breadcrumb span {
+            color: #333;
+            font-weight: bold;
+        }
+
+        
         .courses-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -52,9 +72,14 @@
         .course-card h3 {
             margin: 0.5rem 0;
         }
-        .course-card p {
+        .course-card h3 {
             margin: 0.5rem 0;
-        }
+            font-size: 1rem;
+            line-height: 1.2;
+            white-space: nowrap; /* Evita que el texto se vaya a una nueva línea */
+            overflow: hidden; /* Oculta el texto sobrante */
+            text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
+}
         .course-card button {
             background-color: #3848AA;
             color: white;
@@ -93,6 +118,10 @@
     </nav>
 
     <main>
+        <div class="breadcrumb">
+            <a href="../index.html">Inicio</a> &gt;
+            <span>Cursos</span>
+        </div>
         <div class="courses-container">
             <h1>Cursos Disponibles</h1>
 

@@ -7,6 +7,25 @@
 
     <title>Perfil - Cursos Municipales</title>
     <style>
+        .breadcrumb {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }   
+
+        .breadcrumb span {
+            color: #333;
+            font-weight: bold;
+        }
+
         .profile-container {
             max-width: 600px;
             margin: 0 auto;
@@ -26,6 +45,7 @@
         .profile-details {
             display: grid;
             gap: 1rem;
+            margin-bottom: 2rem;
         }
         .profile-field {
             display: flex;
@@ -40,6 +60,20 @@
             border: 1px solid #ddd;
             border-radius: 4px;
             background-color: #f8f8f8;
+        }
+        .courses-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+        .courses-table th, .courses-table td {
+            border: 1px solid #ddd;
+            padding: 0.5rem;
+            text-align: left;
+        }
+        .courses-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
         }
         .back-btn {
             display: inline-block;
@@ -71,6 +105,10 @@
     </nav>
 
     <main>
+        <div class="breadcrumb">
+            <a href="../index.html">Inicio</a> &gt;
+            <span>Perfil</span>
+        </div>
         <div class="profile-container">
             <div class="profile-header">
                 <div class="profile-image"></div>
@@ -95,6 +133,26 @@
                     <input type="email" id="correo" value="juan.perez@example.com" readonly>
                 </div>
             </div>
+
+            <h2>Mis Cursos</h2>
+            <table class="courses-table">
+                <thead>
+                    <tr>
+                        <th>Nombre del curso</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Desarrollo web</td>
+                        <td>Terminado</td>
+                    </tr>
+                    <tr>
+                        <td>Python para principiantes</td>
+                        <td>En curso</td>
+                    </tr>
+                </tbody>
+            </table>
 
             <a href="inicio.html" class="back-btn">Volver</a>
         </div>
