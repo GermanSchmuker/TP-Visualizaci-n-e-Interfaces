@@ -4,195 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/nav.css">
-    <title>Ayuda - Cursos Municipales</title>
-    <style>
-        
-        .breadcrumb {
-            font-size: 0.9em;
-            color: #666;
-        }
+    <link rel="stylesheet" href="../styles/comunidad.css">
+    <script src="../js/nav.js" defer></script>
+    <script src="../js/popUp.js" defer></script>
 
-        .breadcrumb a {
-            color: #007bff;
-            text-decoration: none;
-        }
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }   
+    <link rel="icon" href="../assets/iconSinBckgrd/logoCursos.png">
 
-        .breadcrumb span {
-            color: #333;
-            font-weight: bold;
-        }
-
-
-        main{
-            margin: 0em 6em;
-        }
-
-
-        .view-all-btn {
-            display: block;
-            width: 200px;
-            margin: 1.5rem auto;
-            padding: .7rem;
-            background-color: #EEF207;
-            color: #000;
-            text-align: center;
-            text-decoration: none;
-            border-radius: .5em;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1em;
-            border: solid 2px #424239;
-            transition: all .2s;
-        }
-
-        .view-all-btn:hover{
-            color: #fff;
-            border: solid 2px #EEF207;
-            background-color: transparent;
-        }
-
-
-
-        .comunidad {
-            margin-top: 0;
-        }
-        .comunidad h1 {
-            font-size: 2em;
-    color: #fff;
-    margin-bottom: 2em;
-}
-
-.foros-container {
-    display: flex;
-    flex-direction: column;
-    overflow-x: none;
-    gap: 1rem;
-    padding-bottom: 1rem;
-    gap: 4em;
-}
-
-.foro {
-    flex: 0 0 300px;
-    background-color: #424239;
-    border-radius: 8px;
-    padding: 1em 2em 2em 2em;
-    box-shadow: 0 0px 5px #EEF207;
-    color: #fff;
-}
-
-.foro h3 {
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-    text-align: center;
-}
-
-.mensajes {
-    max-height: 300px;
-    overflow-y: auto;
-    margin-bottom: 1rem;
-}
-
-.mensaje {
-    display: flex;
-    margin-bottom: 1rem;
-    padding: 0 2em;
-    transition: all .2s;
-}
-
-.mensaje:hover{
-    background-color: #5a5a4e; 
-
-    & .usuario{
-        transform: translateX(10px);
-    }
-}
-
-.opinion-avatar { 
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-            margin-right: 1em;
-            overflow: hidden;
-
-            & img{
-                width: 100%;
-                object-fit: cover;
-            }
-        }
-
-.contenido-mensaje {
-    flex: 1;
-}
-
-.usuario {
-    font-weight: bold;
-    margin-bottom: 0.2rem;
-    transition: all .2s;
-}
-
-.nuevo-mensaje {
-    display: flex;
-}
-
-.nuevo-mensaje input {
-    flex: 1;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px 0 0 4px;
-    color: #000;
-    font-size: 1.1em;
-}
-
-.nuevo-mensaje input::placeholder{
-    color: #000;
-}
-
-.nuevo-mensaje button {
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-}
-
-.nuevo-mensaje button:hover {
-    background-color: #0056b3;
-}
-
-@media (max-width: 768px) {
-    .foros-container {
-        flex-direction: column;
-    }
-
-    .foro {
-        flex: none;
-        width: 100%;
-        margin-bottom: 1rem;
-    }
-}
-    </style>
+    <title>Comunidad - Cursos Municipales</title>
 </head>
 <body>
     <nav>
-        <a href="../index.html">Cursos</a>
+        <a href="../index.html" class="cont-logoCurso">
+            <img class="logoCurso" src="../assets/iconSinBckgrd/logoCursos.png" alt="Cursos" title="Cursos">
+        </a>
         <ul>
             <li><a href="../index.html">Inicio</a></li>
             <li><a href="cursos.html">Cursos</a></li>
             <li><a href="comunidad.html" class="seleccionada">Comunidad</a></li>
             <li><a href="ayuda.html">Ayuda</a></li>
         </ul>
-        <a class="user-icon" href="perfil.html"> 
-            <img src="../assets/img/31.jpeg" alt="Imagen perfil" title="Perfil">
-        </a>
+
+        <div class="cont-user-logout">
+            <a class="user-icon" href="perfil.html"> 
+                <img src="../assets/img/31.jpeg" alt="Imagen perfil" title="Perfil">
+            </a>
+            <a href="#" class="logout">
+                <img src="../assets/iconSinBckgrd/logout.svg" alt="salir" title="Cerrar sesión">
+            </a>
+        </div>
+
+        <ul class="ul_responsive">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="comunidad.html" class="seleccionada">Comunidad</a></li>
+            <li><a href="ayuda.html">Ayuda</a></li>
+            <li><a href="perfil.html">Perfil</a></li>
+            <li><a href="iniciarSesion.html">Cerrar sesión</a></li>
+        </ul>
+        <img src="../assets/iconSinBckgrd/burger_menu.svg" alt="menu" title="Menú" class="burger_menu">
     </nav>
 
-        <main>        
+        <main>  
+            
+            <section class="pop-up-fondo">
+                <section class="pop-up">
+                    <i class='bx bx-info-circle bx-rotate-180 icon-warning'></i>
+                    <p class="pop-up-mensaje">¿Desea cerrar sesión?</p>
+                    <div class="cont-btnes-pupup">
+                        <a href="iniciarSesion.html" class="view-all-btn btn-popup">Aceptar</a>  <!-- este btn deberia eliminar el auto pero no lo hago eso-->
+                        <a href="#" class="view-all-btn btn-popup" id="cancelar">Cancelar</a> 
+                    </div>
+                </section>
+            </section>
+
+
             <section class="comunidad">
             
                 <h1>Foros de la comunidad</h1>
@@ -284,8 +151,18 @@
 
         </main>
 
-    <footer>
-        <p>&copy; 2024 Cursos Municipales. Todos los derechos reservados.</p>
-    </footer>
+        <footer>
+            <a href="../index.html" class="logoFooter">
+                <img src="../assets/iconSinBckgrd/logoCursos.png" alt="logo cursos" title="Logo Cursos">
+            </a>
+    
+            <div class="contContactos">
+                <h5>Contacto:</h5>
+                <a target="_blank" class="footer-link wsp" href="https://web.whatsapp.com"><i class='wsp-icon bx bxl-whatsapp'></i></a>
+                <a target="_blank" class="footer-link ig" href="https://www.instagram.com"><i class='ig-icon bx bxl-instagram'></i></a>
+                <a target="_blank" class="footer-link mail" href="https://mail.google.com"><i class='email-icon bx bx-envelope'></i></a>
+            </div>
+            <p class="copyright">&copy; 2024 Cursos Municipales. Todos los derechos reservados.</p>
+        </footer>
 </body>
 </html>

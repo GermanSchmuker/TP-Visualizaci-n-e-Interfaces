@@ -6,216 +6,189 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../styles/nav.css">
-    
+        <link rel="stylesheet" href="../styles/cursoInscripto.css">
+        <script src="../js/nav.js" defer></script>
+        <script src="../js/popUp.js" defer></script>
+
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <link rel="icon" href="../assets/iconSinBckgrd/logoCursos.png">
+
         <title>Perfil - Cursos Municipales</title>
-        <style>
-            .profile-container {
-                max-width: 600px;
-                margin: 0 auto;
-            }
-            .profile-header {
-                display: flex;
-                align-items: center;
-                gap: 2rem;
-                margin-bottom: 2rem;
-            }
-            .profile-image {
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                background-color: #ddd;
-            }
-            .profile-details {
-                display: grid;
-                gap: 1rem;
-            }
-            .profile-field {
-                display: flex;
-                flex-direction: column;
-            }
-            .profile-field label {
-                font-weight: bold;
-                margin-bottom: 0.25rem;
-            }
-            .profile-field input {
-                padding: 0.5rem;
-                border: 1px solid #ddd;
-                border-radius: 4px;
-                background-color: #f8f8f8;
-            }
-            .back-btn {
-                display: inline-block;
-                margin-top: 2rem;
-                padding: 0.5rem 1rem;
-                background-color: #6c757d;
-                color: white;
-                text-decoration: none;
-                border-radius: 4px;
-            }
-            body {
-     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-}
-
-main {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.curso-detalle h1 {
-    color: #fff;
-    margin-bottom: 1rem;
-}
-
-.curso-video {
-    margin-bottom: 2rem;
-}
-
-.curso-video iframe {
-    width: 100%;
-    max-width: 560px;
-    height: 315px;
-    display: block;
-    margin: 0 auto;
-}
-
-.curso-temas h2 {
-    color: #fff;
-    margin-bottom: 1rem;
-}
-
-details {
-    color: #fff;
-    margin-bottom: 1rem;
-    border-radius: 5px;
-    border: solid 1px #EEF207;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    transition: all .2s;
-}
-
-details:hover{
-    box-shadow: 0 0 10px #EEF207;
-}
-
-summary {
-    padding: 1rem;
-    cursor: pointer;
-    font-weight: bold;
-    color: #fff;
-}
-
-details p {
-    padding: 1rem;
-    margin: 0;
-}
-
-.view-all-btn {
-            display: block;
-            width: 200px;
-            margin: 1.5rem auto;
-            padding: .7rem;
-            background-color: #EEF207;
-            color: #000;
-            text-align: center;
-            text-decoration: none;
-            border-radius: .5em;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1em;
-            border: solid 2px #424239;
-            transition: all .2s;
-        }
-
-        .view-all-btn:hover{
-            color: #fff;
-            border: solid 2px #EEF207;
-            background-color: transparent;
-        }
-
-@media (max-width: 600px) {
-    nav {
-        flex-direction: column;
-    }
-
-    nav ul {
-        margin-top: 1rem;
-    }
-
-    .curso-video iframe {
-        height: 200px;
-    }
-}
-    </style>
     </head>
     <body>
         
         <nav>
-            <a href="../index.html">Cursos</a>
+            <a href="../index.html" class="cont-logoCurso">
+                <img class="logoCurso" src="../assets/iconSinBckgrd/logoCursos.png" alt="Cursos" title="Cursos">
+            </a>
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
-                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="cursos.html" class="seleccionada">Cursos</a></li>
                 <li><a href="comunidad.html">Comunidad</a></li>
                 <li><a href="ayuda.html">Ayuda</a></li>
             </ul>
-            <a class="user-icon" href="perfil.html"> 
-                <img src="../assets/img/31.jpeg" alt="Imagen perfil" title="Perfil">
-            </a>
+    
+            <div class="cont-user-logout">
+                <a class="user-icon" href="perfil.html"> 
+                    <img src="../assets/img/31.jpeg" alt="Imagen perfil" title="Perfil">
+                </a>
+                <a href="#" class="logout">
+                    <img src="../assets/iconSinBckgrd/logout.svg" alt="salir" title="Cerrar sesión">
+                </a>
+            </div>
+    
+            <ul class="ul_responsive">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="cursos.html" class="seleccionada">Cursos</a></li>
+                <li><a href="comunidad.html">Comunidad</a></li>
+                <li><a href="ayuda.html">Ayuda</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="iniciarSesion.html">Cerrar sesión</a></li>
+            </ul>
+            <img src="../assets/iconSinBckgrd/burger_menu.svg" alt="menu" title="Menú" class="burger_menu">
         </nav>
     <main class="curso-detalle">
-        <h1>Introducción a la Programación en Python</h1>
+
+
+        <section class="pop-up-fondo">
+            <section class="pop-up">
+                <i class='bx bx-info-circle bx-rotate-180 icon-warning'></i>
+                <p class="pop-up-mensaje">¿Desea cerrar sesión?</p>
+                <div class="cont-btnes-pupup">
+                    <a href="iniciarSesion.html" class="view-all-btn btn-popup">Aceptar</a>  <!-- este btn deberia eliminar el auto pero no lo hago eso-->
+                    <a href="#" class="view-all-btn btn-popup" id="cancelar">Cancelar</a> 
+                </div>
+            </section>
+        </section>
+
+
+        <h1>Introducción al Desarrollo Web</h1>
         
         <section class="curso-video">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/vKi9XI3Ya7s?si=Me687MwfuYIRok9D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>       
         </section>
 
         <section class="curso-temas">
             <h2>Temas del Curso</h2>
             
             <details>
-                <summary>1. Introducción a Desarrollo Web</summary>
-                <p>Aprende los conceptos básicos de Python, su historia y por qué es tan popular en la actualidad.</p>
-                <button class="view-all-btn">Practicar</button>
+                <summary>1. HTML: Estructura, etiquetas y listas </summary>
+                <section class="video-lista">
+                    <section class="curso-video-detail">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/vKi9XI3Ya7s?si=Me687MwfuYIRok9D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>       
+                    </section>
+                    <ul>
+                        <li>Estructura básica de un documento HTML</li>
+                        <li>Etiquetas principales</li>
+                        <li>Listas: ul - ol</li>
+                    </ul>
+                </section>
+                <div class="contenido">
+                    <img class="iconPdf" src="../assets/iconSinBckgrd/iconoPdf.png" alt="icon_pdf" title="PDF">
+                    <p>Ejercicios de práctica</p>
+                    <a href="../assets/pdf/ejercicios.pdf" target="_blank">
+                        <img class="iconDownload" src="../assets/iconSinBckgrd/iconoDescarga.svg" alt="descargar" title="Descargar contenido">
+                    </a>
+                </div>
             </details>
 
             <details>
-                <summary>2. Variables y Tipos de Datos</summary>
-                <p>Explora los diferentes tipos de datos en Python y cómo trabajar con variables.</p>
-                <button class="view-all-btn">Practicar</button>
+                <summary>2. HTML: Formularios y otras etiquetas</summary>
+
+                <section class="video-lista">
+                    <section class="curso-video-detail">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/vKi9XI3Ya7s?si=Me687MwfuYIRok9D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>       
+                    </section>
+                    <ul>
+                        <li>Formularios y elemento</li>
+                        <li>Etiquetas semántica</li>
+                    </ul>
+                </section>
+                <div class="contenido">
+                    <img class="iconPdf" src="../assets/iconSinBckgrd/iconoPdf.png" alt="icon_pdf" title="PDF">
+                    <p>Ejercicios de práctica</p>
+                    <a href="../assets/pdf/ejercicios.pdf" target="_blank">
+                        <img class="iconDownload" src="../assets/iconSinBckgrd/iconoDescarga.svg" alt="descargar" title="Descargar contenido">
+                    </a>
+                </div>
             </details>
 
             <details>
-                <summary>3. Estructuras de Control</summary>
-                <p>Domina las estructuras de control como if-else, bucles for y while.</p>
-                <button class="view-all-btn">Practicar</button>
+                <summary>3. CSS: Grillas, colores, fuentes y responsive.</summary>
+                <section class="video-lista">
+                    <section class="curso-video-detail">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dxiyQmXBF-k?si=uGDwa8QOv-QWE3X9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </section>
+                    <ul>
+                        <li>Modelo de caja: padding, margin, border</li>
+                        <li>Colores y fondos</li>
+                        <li>Flexbox y sus propiedades</li>
+                        <li>Posicionamiento (relative, absolute, fixed)</li>
+                        <li>Media queries para diseño responsive</li>
+                    </ul>
+                </section>
+                <div class="contenido">
+                    <img class="iconPdf" src="../assets/iconSinBckgrd/iconoPdf.png" alt="icon_pdf" title="PDF">
+                    <p>Ejercicios de práctica</p>
+                    <a href="../assets/pdf/ejercicios.pdf" target="_blank">
+                        <img class="iconDownload" src="../assets/iconSinBckgrd/iconoDescarga.svg" alt="descargar" title="Descargar contenido">
+                    </a>
+                </div>
             </details>
 
             <details>
-                <summary>4. Funciones</summary>
-                <p>Aprende a crear y utilizar funciones para organizar y reutilizar tu código.</p>
-                <button class="view-all-btn">Practicar</button>
+                <summary>4. JavaScript: DOM y funciones</summary>
+                <section class="video-lista">
+                    <section class="curso-video-detail">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/x5YUu0eUc8s?si=iSNWU0UFbKzByCqj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </section>
+                    <ul>
+                        <li>Manipulación del DOM</li>
+                        <li>Manejo de eventos (`click`, `mouseover`, etc.)</li>
+                        <li>Funciones y flechas (`=>`)</li>
+                    </ul>
+                </section>
+                <div class="contenido">
+                    <img class="iconPdf" src="../assets/iconSinBckgrd/iconoPdf.png" alt="icon_pdf" title="PDF">
+                    <p>Ejercicios de práctica</p>
+                    <a href="../assets/pdf/ejercicios.pdf" target="_blank">
+                        <img class="iconDownload" src="../assets/iconSinBckgrd/iconoDescarga.svg" alt="descargar" title="Descargar contenido">
+                    </a>
+                </div>
             </details>
 
             <details>
-                <summary>5. Proyecto Final</summary>
-                <p>Aplica todo lo aprendido en un proyecto práctico guiado por el instructor.</p>
-                <button class="view-all-btn">Practicar</button>
+                <summary>5. JavaScript: Formularios y promesas</summary>
+                <section class="video-lista">
+                    <section class="curso-video-detail">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/x5YUu0eUc8s?si=iSNWU0UFbKzByCqj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </section>
+                    <ul>
+                        <li>Promesas y manejo de asincronía</li>
+                        <li>Validación de formularios con JavaScript</li>
+                    </ul>
+                </section>
+                <div class="contenido">
+                    <img class="iconPdf" src="../assets/iconSinBckgrd/iconoPdf.png" alt="icon_pdf" title="PDF">
+                    <p>Ejercicios de práctica</p>
+                    <a href="../assets/pdf/ejercicios.pdf" target="_blank">
+                        <img class="iconDownload" src="../assets/iconSinBckgrd/iconoDescarga.svg" alt="descargar" title="Descargar contenido">
+                    </a>
+                </div>
             </details>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Cursos Municipales. Todos los derechos reservados.</p>
+        <a href="../index.html" class="logoFooter">
+            <img src="../assets/iconSinBckgrd/logoCursos.png" alt="logo cursos" title="Logo Cursos">
+        </a>
+
+        <div class="contContactos">
+            <h5>Contacto:</h5>
+            <a target="_blank" class="footer-link wsp" href="https://web.whatsapp.com"><i class='wsp-icon bx bxl-whatsapp'></i></a>
+            <a target="_blank" class="footer-link ig" href="https://www.instagram.com"><i class='ig-icon bx bxl-instagram'></i></a>
+            <a target="_blank" class="footer-link mail" href="https://mail.google.com"><i class='email-icon bx bx-envelope'></i></a>
+        </div>
+        <p class="copyright">&copy; 2024 Cursos Municipales. Todos los derechos reservados.</p>
     </footer>
     </body>
     </html>

@@ -5,335 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="js/nav.js" defer></script>
+    <script src="js/slider.js" defer></script>
+    <script src="js/popUp.js" defer></script>
+    <link rel="icon" href="assets/iconSinBckgrd/logoCursos.png">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <title>Inicio - Cursos Municipales</title>
-    <style>
-
-        /*color amarillo : #EEF207*/
-        /*color gris : #424239*/
-        body {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        main{
-            padding: 0;
-        }
-
-        .description {
-
-            margin-bottom: 2rem;
-        }
-
-        .slide-container{
     
-            position: relative;
-			width: 100%;
-			height: 400px;
-
-            & .contenedor_titulos_slides{
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                color: #fff;
-                position: absolute;
-                z-index: 50;
-                bottom: 40px;
-                left: 30%;
-                
-
-                & h4{
-                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                }
-
-                h4, h2{
-                    text-align: center;
-                    font-size: 2em;
-                }
-            }
-		}
-		.slide-container .slides{
-			width: 100%;
-			height: calc(100% - 40px);
-			position: relative;
-			overflow: hidden;
-		}
-		.slide-container .slides img{
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			object-fit: cover;
-            filter:brightness(.4);
-		}
-		.slide-container .slides img:not(.active){
-			top: 0;
-			left: -100%;
-		}
-		span.next, span.prev{
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			padding: 14px;
-			color: #eee;
-			font-size: 24px;
-			font-weight: bold;
-			transition: 0.5s;
-			border-radius: 3px;
-			user-select: none;
-			cursor: pointer;
-			z-index: 1;
-		}
-		span.next{
-			right: 20px;
-		}
-		span.prev{
-			left: 20px;
-		}
-		span.next:hover, span.prev:hover{
-			background-color: #ede6d6;
-			opacity: 0.8;
-			color: #222;
-		} 
-		.dotsContainer{
-			position: absolute;
-			bottom: 5px;
-			z-index: 3;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-		.dotsContainer .dot{
-			width: 10px;
-			height: 10px;
-			margin: 0px 2px;
-			border: 2px solid #EEF207;
-			border-radius: 50%;
-			display: inline-block;
-			cursor: pointer;
-			transition: background-color 0.6s ease;
-		}
-		.dotsContainer .active{
-			background-color: #000000;
-		}
-
-		@keyframes next1{
-			from{
-				left: 0%
-			}
-			to{
-				left: -100%;
-			}
-		}
-		@keyframes next2{
-			from{
-				left: 100%
-			}
-			to{
-				left: 0%;
-			}
-		}
-
-		@keyframes prev1{
-			from{
-				left: 0%
-			}
-			to{
-				left: 100%;
-			}
-		}
-		@keyframes prev2{
-			from{
-				left: -100%
-			}
-			to{
-				left: 0%;
-			}
-		}
-
-
-        .search-bar {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-        }
-
-        .search-bar input {
-            padding: .7rem .5rem;
-            width: 400px;
-            border-radius: 4px;
-            font-size: 1.1em;
-            background-color: #565654;
-            color: red;
-            caret-color: #EEF207;    
-            border: none;
-            border-bottom: solid 2px #EEF207;
-        }
-
-        .search-bar input:focus{
-            border: none;
-            outline: #EEF207 2px solid;
-        }
-
-        input::placeholder {
-            color: #ffffff; 
-        }
-
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 5em 6em;
-        }
-
-        .course-card {
-            box-shadow: 2px 2px 15px #000;
-            border-radius: none;
-            border-top-right-radius: 3em;
-            border-bottom-left-radius: 3em;
-
-            padding: 1rem;
-            text-align: center;
-            color: #fff;
-            transition: all .2s;
-            text-decoration: none;
-        }
-
-        .course-card:hover{
-            transform: translateY(-10px);
-        }
-
-        .course-card h3 {
-            margin: 0.5rem 0;
-        }
-
-        .course-card p {
-            margin: 0.5rem 0;
-        }
-
-        .course-card img {
-            width: 128px;
-            height: 128px;
-            margin-bottom: 1rem;
-            object-fit: contain;
-        }
-
-        .view-all-btn {
-            display: block;
-            width: 200px;
-            margin: 1.5rem auto;
-            padding: .7rem;
-            background-color: #EEF207;
-            color: #000;
-            text-align: center;
-            text-decoration: none;
-            border-radius: .5em;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1em;
-            border: solid 2px #424239;
-            transition: all .2s;
-        }
-
-        .view-all-btn:hover{
-            color: #fff;
-            border: solid 2px #EEF207;
-            background-color: transparent;
-        }
-
-        .opiniones {
-            margin-top: 2rem;
-            margin-top: 7em;
-        }
-
-        .opiniones h2 {
-            color: #fff;
-            text-align: center;
-        }
-
-        .opiniones-grid {
-            margin: 5em ;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .opinion-card {
-            background-color: transparent;
-            border: solid 1px #EEF207;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            transition: all .2s;
-        }
-
-        .opinion-card:hover{
-            box-shadow: 0 0 10px #EEF207;
-        }
-
-        .opinion-avatar { 
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-            border: solid 2px #000;
-            overflow: hidden;
-
-            & img{
-                width: 100%;
-                object-fit: cover;
-            }
-        }
-
-        .opinion-card h3 {
-            margin: 0;
-        }
-
-        .opinion-rol {
-            font-size: 0.9rem;
-            margin: 0.5rem 0;
-        }
-
-        .opinion-texto {
-            border-top: solid 1px #858585;
-            padding-top: 1.2em;
-            font-style: italic;
-            margin: 1rem 0;
-        }
-
-        .opinion-estrellas {
-            color: #ffd700;
-            font-size: 1.2rem;
-        }
-
-        @media (max-width: 768px) {
-            .opiniones-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-    </style>
 </head>
 
 <body>
     <nav>
-        <a href="../index.html">Cursos</a>
+        <a href="index.html" class="cont-logoCurso">
+            <img class="logoCurso" src="assets/iconSinBckgrd/logoCursos.png" alt="Cursos" title="Cursos">
+        </a>
         <ul>
-            <li><a href="../index.html" class="seleccionada">Inicio</a></li>
+            <li><a href="index.html"  class="seleccionada">Inicio</a></li>
             <li><a href="pages/cursos.html">Cursos</a></li>
             <li><a href="pages/comunidad.html">Comunidad</a></li>
             <li><a href="pages/ayuda.html">Ayuda</a></li>
         </ul>
-        <a class="user-icon" href="pages/perfil.html"> 
-            <img src="assets/img/31.jpeg" alt="Imagen perfil" title="Perfil">
-        </a>
+
+        <div class="cont-user-logout">
+            <a class="user-icon" href="pages/perfil.html"> 
+                <img src="assets/img/31.jpeg" alt="Imagen perfil" title="Perfil">
+            </a>
+            <a href="#" class="logout">
+                <img src="assets/iconSinBckgrd/logout.svg" alt="salir" title="Cerrar sesión">
+            </a>
+        </div>
+
+        <ul class="ul_responsive">
+            <li><a href="index.html"  class="seleccionada">Inicio</a></li>
+            <li><a href="pages/cursos.html">Cursos</a></li>
+            <li><a href="pages/comunidad.html">Comunidad</a></li>
+            <li><a href="pages/ayuda.html">Ayuda</a></li>
+            <li><a href="pages/perfil.html">Perfil</a></li>
+            <li><a href="pages/iniciarSesion.html">Cerrar sesión</a></li>
+        </ul>
+        <img src="assets/iconSinBckgrd/burger_menu.svg" alt="menu" title="Menú" class="burger_menu">
     </nav>
 
+
     <main>
+
+
+        <section class="pop-up-fondo">
+            <section class="pop-up">
+                <i class='bx bx-info-circle bx-rotate-180 icon-warning'></i>
+                <p class="pop-up-mensaje">¿Desea cerrar sesión?</p>
+                <div class="cont-btnes-pupup">
+                    <a href="pages/iniciarSesion.html" class="view-all-btn btn-popup">Aceptar</a>  <!-- este btn deberia eliminar el auto pero no lo hago eso-->
+                    <a href="#" class="view-all-btn btn-popup" id="cancelar">Cancelar</a> 
+                </div>
+            </section>
+        </section>
 
         <div class="description">
 
@@ -373,33 +102,34 @@
             <input type="text" placeholder="Buscar cursos...">
         </div>
 
+        <h2 class="titleCursosInicio">Cursos más populares:</h2>
         <div class="courses-grid">
             <a class="course-card" href="pages/detalleCurso.html">
                 <img src="assets/iconSinBckgrd/desarolloWeb-removebg-preview.png" alt="Desarrollo web">
                 <div class="opinion-estrellas">★★★★★</div>
                 <h3>Desarrollo web</h3>
-                <p>Duración: 4 semanas</p>
+                <p>Duración: 4 horas</p>
                 <button onclick="window.location.href='pages/detalleCurso.html';" class="view-all-btn">Inscribirse</button>
             </a>
             <a class="course-card" href="pages/detalleCurso.html">
                 <img src="assets/iconSinBckgrd/python-removebg-preview.png" alt="Programación en Python">
                 <div class="opinion-estrellas">★★★★☆</div>
                 <h3>Python</h3>
-                <p>Duración: 6 semanas</p>
+                <p>Duración: 6 horas</p>
                 <button class="view-all-btn">Inscribirse</button>
             </a>
             <a class="course-card" href="pages/detalleCurso.html">
                 <img src="assets/iconSinBckgrd/ilustrator-removebg-preview.png" alt="Diseño UX/UI">
                 <div class="opinion-estrellas">★★★★★</div>
                 <h3>Diseño UX/UI</h3>
-                <p>Duración: 5 semanas</p>
+                <p>Duración: 5 horas</p>
                 <button class="view-all-btn">Inscribirse</button>
             </a>
             <a class="course-card" href="pages/detalleCurso.html">
                 <img src="assets/iconSinBckgrd/ia-removebg-preview.png" alt="Inteligencia Artificial">
                 <div class="opinion-estrellas">★★☆☆☆</div>
                 <h3>Inteligencia Artificial</h3>
-                <p>Duración: 8 semanas</p>
+                <p>Duración: 8 horas</p>
                 <button class="view-all-btn">Inscribirse</button>
             </a>
         </div>
@@ -408,7 +138,7 @@
 
 
         <section class="opiniones">
-            <h2>Opiniones de los Estudiantes</h2>
+            <h2>Opiniones de los Estudiantes:</h2>
             <div class="opiniones-grid">
                 <div class="opinion-card">
                     <p class="opinion-avatar">
@@ -451,80 +181,23 @@
                 </div>
             </div>
         </section>
-        <a href="pages/comunidad.html" class="view-all-btn">Ver más</a>
+        <a href="pages/comunidad.html" class="view-all-btn botonFinal">Ver más</a>
 
     </main>
 
     <footer>
-        <p>&copy; 2024 Cursos Municipales. Todos los derechos reservados.</p>
+        <a href="index.html" class="logoFooter">
+            <img src="assets/iconSinBckgrd/logoCursos.png" alt="logo cursos" title="Logo Cursos">
+        </a>
+
+        <div class="contContactos">
+            <h5>Contacto:</h5>
+            <a target="_blank" class="footer-link wsp" href="https://web.whatsapp.com"><i class='wsp-icon bx bxl-whatsapp'></i></a>
+            <a target="_blank" class="footer-link ig" href="https://www.instagram.com"><i class='ig-icon bx bxl-instagram'></i></a>
+            <a target="_blank" class="footer-link mail" href="https://mail.google.com"><i class='email-icon bx bx-envelope'></i></a>
+        </div>
+        <p class="copyright">&copy; 2024 Cursos Municipales. Todos los derechos reservados.</p>
     </footer>
-
-    <script>
-        let slideImages = document.querySelectorAll('.slides img');
-        let next = document.querySelector('.next');
-        let prev = document.querySelector('.prev');
-        let dots = document.querySelectorAll('.dot');
-        let counter = 0;
-
-        next.addEventListener('click', slideNext);
-        function slideNext() {
-            slideImages[counter].classList.remove('active');
-            if (counter >= slideImages.length - 1) {
-                counter = 0;
-            } else {
-                counter++;
-            }
-            slideImages[counter].classList.add('active');
-            indicators();
-        }
-
-        prev.addEventListener('click', slidePrev);
-        function slidePrev() {
-            slideImages[counter].classList.remove('active');
-            if (counter == 0) {
-                counter = slideImages.length - 1;
-            } else {
-                counter--;
-            }
-            slideImages[counter].classList.add('active');
-            indicators();
-        }
-
-        function autoSliding() {
-            deletInterval = setInterval(timer, 3000);
-            function timer() {
-                slideNext();
-                indicators();
-            }
-        }
-        autoSliding();
-
-        const container = document.querySelector('.slide-container');
-        container.addEventListener('mouseover', function () {
-            clearInterval(deletInterval);
-        });
-
-        container.addEventListener('mouseout', autoSliding);
-
-        function indicators() {
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].classList.remove('active');
-            }
-            dots[counter].classList.add('active');
-        }
-
-        function switchImage(currentImage) {
-            const imageId = parseInt(currentImage.getAttribute('attr'));
-            if (imageId === counter) return;
-
-            slideImages[counter].classList.remove('active');
-            counter = imageId;
-            slideImages[counter].classList.add('active');
-            indicators();
-        }
-
-    </script>
-
 </body>
 
 </html>
